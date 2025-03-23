@@ -1,2 +1,66 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Завдання 1: Перевірка температури
+        System.out.print("Введіть температуру: ");
+        int temperature = scanner.nextInt();
+        if (temperature < 10) {
+            System.out.println("Погода холодна.");
+        } else if (temperature <= 25) {
+            System.out.println("Погода тепла.");
+        } else {
+            System.out.println("Погода спекотна.");
+        }
+
+        // Завдання 2: Перевірка на парність за допомогою тернарного оператора
+        System.out.print("Введіть число: ");
+        int number = scanner.nextInt();
+        System.out.println(number % 2 == 0 ? "Парне" : "Непарне");
+
+        // Завдання 3: Повідомлення про день тижня
+        System.out.print("Введіть назву дня тижня (напр. понеділок): ");
+        scanner.nextLine(); // Очищення буфера
+        String day = scanner.nextLine().toLowerCase();
+        switch (day) {
+            case "понеділок":
+                System.out.println("Це початок робочого тижня.");
+                break;
+            case "вівторок":
+                System.out.println("Це вівторок!");
+                break;
+            case "середа":
+                System.out.println("Середина тижня.");
+                break;
+            case "четвер":
+                System.out.println("Ще трошки до п'ятниці!");
+                break;
+            case "п'ятниця":
+                System.out.println("Ось і п'ятниця!");
+                break;
+            case "субота":
+                System.out.println("Вихідний день!");
+                break;
+            case "неділя":
+                System.out.println("Відпочиваємо.");
+                break;
+            default:
+                System.out.println("Некоректний день тижня.");
+        }
+
+        // Завдання 4: Перевірка пароля
+        System.out.print("Введіть пароль: ");
+        String password = scanner.nextLine();
+        if (password.equals("admin123")) {
+            System.out.println("Доступ дозволено.");
+        } else {
+            System.out.println("Доступ заборонено.");
+        }
+
+        scanner.close();
+    }
+}
